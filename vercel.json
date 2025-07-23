@@ -7,31 +7,35 @@
     },
     "routes": [
         {
-            "src": "/banner/(.*)",
-            "dest": "/public/banner/"
+            "src": "/(css|js|images|fonts|storage)/(.*)",
+            "dest": "/public/$1/$2"
         },
         {
             "src": "/(.*)",
             "dest": "/api/index.php"
-        },
-        {
-            "src": "/gambar/(.*)",
-            "dest": "/public/gambar/"
         }
     ],
     "env": {
+        "APP_NAME": "Laravel",
         "APP_ENV": "production",
-        "APP_DEBUG": "true",
-        "APP_URL": "https://bunga-collection.vercel.app/",
-        "APP_CONFIG_CACHE": "/tmp/config.php",
-        "APP_EVENTS_CACHE": "/tmp/events.php",
-        "APP_PACKAGES_CACHE": "/tmp/packages.php",
-        "APP_ROUTES_CACHE": "/tmp/routes.php",
-        "APP_SERVICES_CACHE": "/tmp/services.php",
-        "VIEW_COMPILED_PATH": "/tmp",
+        "APP_DEBUG": "false",
+        "APP_URL": "https://bunga-collection.vercel.app",
+        "APP_KEY": "base64:DHxljh7C2y5J3nBwGg+G3bXl3nBwGg+G3bXl3nBwGg+G=",
+
+        "DB_CONNECTION": "mysql",
+        "DB_HOST": "sql12.freesqldatabase.com",
+        "DB_PORT": "3306",
+        "DB_DATABASE": "sql12791321",
+        "DB_USERNAME": "sql12791321",
+        "DB_PASSWORD": "XMMsPIFdwf",
+
         "CACHE_DRIVER": "array",
         "LOG_CHANNEL": "stderr",
-        "SESSION_DRIVER": "cookie"
-    },
-    "outputDirectory": "public"
+        "SESSION_DRIVER": "cookie",
+
+        "APP_STORAGE": "/tmp/storage",
+        "VIEW_COMPILED_PATH": "/tmp/views",
+        "SSR_TEMP_PATH": "/tmp/ssr",
+        "CACHE_FILESYSTEM_DRIVER": "local"
+    }
 }
